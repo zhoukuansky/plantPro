@@ -1,0 +1,282 @@
+@charset "UTF-8";
+/* main statr */
+.plant-box p {
+	margin: 0;
+}
+
+#main {
+	overflow: hidden;
+	background-color: rgba(233, 233, 233, .7);
+}
+
+.content-box {
+	width: 1450px;
+	height: 700px;
+	margin: 0 auto;
+}
+
+.content-box::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.fl {
+	float: left;
+	height: 120%;
+}
+
+/* main-left start */
+.main-left {
+	width: 40%;
+}
+
+.device-ID {
+	padding: 20px 10px 5px 50px;
+}
+
+.device-ID::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.select-txt {
+	/* display: block; */
+	width: 180px;
+	height: 25px;
+	line-height: 20px;
+	float: left;
+	padding-left: 8px;
+	outline: none;
+	border-radius: 6px;
+	box-shadow: 1px 1px 1px #ccc inset, 1px 1px 1px #ccc;
+}
+
+.login-btn {
+	margin-left: 7px;
+	float: left;
+	width: 15px;
+	height: 15px;
+	box-sizing: content-box;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	background-color: rgb(115, 236, 67);
+}
+
+.caipin {
+	padding: 20px 10px 5px 50px;
+}
+
+.plant-txt {
+	width: 180px;
+	height: 25px;
+	line-height: 20px;
+	float: left;
+	padding-left: 8px;
+	outline: none;
+	border-radius: 6px;
+	box-shadow: 1px 1px 1px #ccc inset, 1px 1px 1px #ccc;
+}
+
+/* main-left end */
+
+/* main-mid start */
+.main-mid {
+	width: 30%;
+}
+
+.plant-box {
+	position: relative;
+	padding-top: 48px;
+	font-size: 16px;
+	font-weight: bold;
+	color: rgb(255, 0, 0);
+	line-height: 20px;
+	font-family: "Microsoft Yahei";
+}
+
+.plant-box::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.plant-box p {
+	position: absolute;
+	float: left;
+}
+
+.plant-box p:nth-of-type(1) {
+	left: 0;
+	bottom: 0;
+}s
+
+.plant-box p:nth-of-type(2) {
+	left: 340px;
+	bottom: 0;
+}
+
+.plant-box input {
+	float: left;
+	width: 130px;
+	padding-left: 10px;
+	margin-left: 130px;
+	margin-right: 75px;
+	box-sizing: content-box;
+	outline: none;
+	border: none;
+	border-radius: 3px;
+	box-shadow: 0 1px 0 #bebbb9 inset, 0 1px 0 #fcfcfc;
+	background-color: rgba(233, 233, 233, .7);
+}
+
+.plant-box a {
+	width: 50px;
+	height: 25px;
+	line-height: 25px;
+	float: left;
+	text-align: center;
+	border-radius: 50%;
+	color: rgb(255, 0, 0);
+	background-color: rgb(207, 204, 204);
+}
+
+/* main-mid end */
+
+/* main-right start */
+.main-right {
+	position: relative;
+	width: 30%;
+}
+
+.control-btn {
+	position: absolute;
+	left: 70px;
+	top: 500px;
+	width: 120px;
+	height: 50px;
+	font-size: 17px;
+	border: none;
+	border-radius: 6px;
+}
+.control-pic{
+	position: absolute;
+	left: 70px;
+	top: 420px;
+	width: 120px;
+	height: 50px;
+	font-size: 17px;
+	border: none;
+	border-radius: 6px;
+}
+
+/* main-right end */
+
+/* main end */
+
+/* 自定义模态框 */
+.one_modal {
+    display: none;
+    /* 默认隐藏 */
+    position: fixed;
+    /* 根据浏览器定位 */
+    z-index: 1;
+    /* 放在顶部 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* 全宽 */
+    height: 100%;
+    /* 全高 */
+    overflow: auto;
+    /* 允许滚动 */
+    background-color: rgba(146, 155, 149, 0.8);
+    /* 背景色 */
+}
+
+.one-modal-content {
+    display: flex;
+    /*采用flexbox布局*/
+    flex-direction: column;
+    /*垂直排列*/
+    position: relative;
+    background-color: #fefefe;
+    margin: 3% auto;
+    /*距顶部15% 水平居中*/
+    padding: 0px 0px 0px 0px;
+    border: 1px solid #888;
+    width: 800px;
+    min-height: 600px;
+    animation: topDown 0.4s;
+    /*自定义动画，从模态框内容上到下出现*/
+}
+
+@keyframes topDown {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+.one-modal-header {
+    display: flex;
+    /*采用flexbox布局*/
+    flex-direction: row;
+    /*水平布局*/
+    align-items: center;
+    /*内容垂直居中*/
+    justify-content: space-between;
+
+    background-color: rgb(91, 184, 91);
+    color: black;
+    padding: 0 0 0 350px;
+    margin: 0;
+}
+
+.one-modal-body {
+    min-height: 150px;	
+    margin: 10px 20px;
+}
+#btnSure {
+	width: 70px;
+	position:absolute;
+	top: 550px;
+	left: 300px;
+}
+#btnClose {
+	width: 70px;
+	position:absolute;
+	top: 550px;
+	left: 420px;
+}
+.pic_box{
+	border: 1px rgb(206, 200, 200) solid;
+	height: 450px;
+	width: 400px;
+	padding: 10px;
+	float: left;
+}
+.center-block{
+	width: 300px;
+}
+.see{
+	font-size: 16px;
+	width: 350px;
+	background: rgb(223, 223, 206);
+	height: 450px;
+	float: right;
+	padding: 10px;
+}
+.see span:nth-child(1){
+	display: inline-block;
+	width: 120px;
+}
+.name1{
+	color: red;
+	font-size: 18px;
+}

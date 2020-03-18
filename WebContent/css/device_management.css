@@ -1,0 +1,72 @@
+@charset "UTF-8";
+/* 中部标题部分 start  */
+#middle-title {
+	margin: 0 auto;
+	height: 700px;
+	width: 100%;
+	background-color: #eeeded;
+	overflow: hidden;
+}
+
+.middle-head {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 800px;
+	margin: 0 auto;
+}
+
+.middle-head .fl {
+	float: left;
+}
+
+.middle-head::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.content {
+	width: 800px;
+	height: 60px;
+	border: 1px solid #ccc;
+	margin: 0 auto;
+	box-sizing: content-box;
+}
+
+.content div {
+	margin: 0;
+	height: 30px;
+	line-height: 30px;
+}
+
+.content div span {
+	float: left;
+	padding-left: 120px;
+}
+
+.content div a {
+	margin-left: 120px;
+	display: inline-block;
+}
+
+.add {
+	width: 800px;
+	margin: 0 auto;
+}
+
+.form-control {
+	display: inline-block !important;
+	width: 400px !important;
+	margin-top: 50px !important;
+	margin-left: 130px;
+}
+
+.btn-success {
+	width: 150px !important;
+}
+
+.btn-danger {
+	float: right;
+	margin-right: 100px;
+	margin-top: -10px;
+}

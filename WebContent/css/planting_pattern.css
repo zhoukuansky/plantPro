@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+.middle-head {
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+#middle-title {
+	width: 800px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.content {
+	width: 800px;
+	height: 60px;
+	border: 1px solid #ccc;
+	margin-bottom: -1px;
+	box-sizing: content-box;
+	position: relative;
+}
+
+a {
+	display: inline;
+}
+
+.content div {
+	margin: 0;
+	height: 30px;
+	line-height: 30px;
+}
+
+.content div span {
+	float: left;
+	padding-left: 100px;
+}
+
+.content div a {
+	float: left;
+	margin-left: 100px;
+}
+
+.content div:nth-of-type(2) {
+	position: relative;
+}
+
+.btn-add {
+	margin-left: 700px;
+	display: inline !important;
+}
+
+#caozuo {
+	position: absolute;
+	left: 500px;
+	top: 13px;
+}
+
+.btn1 {
+	margin-left: 25px;
+}
+
+.btn a {
+	text-decoration: none;
+	color: white;
+}
+
+.btn a:hover {
+	color: white;
+}

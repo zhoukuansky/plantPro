@@ -1,0 +1,19 @@
+@charset "UTF-8";
+/* 内容部分 start */
+blockquote {
+	display: block;
+	padding: 15px 20px;
+	box-shadow: 0 3px #ccc inset, 0 4px #ccc;
+	border-radius: 10px;
+}
+
+.content {
+	line-height: 20px;
+	text-indent: 2em;
+}
+
+.content ul li {
+	margin: 50px 0
+}
+
+/* 内容部分 end */

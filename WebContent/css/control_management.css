@@ -1,0 +1,179 @@
+@charset "UTF-8";
+/* main statr */
+p {
+	margin: 0;
+}
+
+#main {
+	overflow: hidden;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+.content-box {
+	width: 1450px;
+	height: 700px;
+	margin: 0 auto;
+}
+
+.content-box::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.fl {
+	float: left;
+	height: 110%;
+}
+
+/* main-left start */
+.main-left {
+	width: 25%;
+}
+
+.device-ID {
+	padding: 20px 10px 5px 10px;
+}
+
+.device-ID::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.select-txt {
+	/* display: block; */
+	width: 180px;
+	height: 25px;
+	line-height: 20px;
+	float: left;
+	padding-left: 8px;
+	outline: none;
+	border-radius: 6px;
+	box-shadow: 1px 1px 1px #ccc inset, 1px 1px 1px #ccc;
+}
+
+.login-btn {
+	margin-left: 7px;
+	float: left;
+	width: 15px;
+	height: 15px;
+	box-sizing: content-box;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	background-color: rgb(115, 236, 67);
+}
+
+.caipin {
+	padding: 20px 10px 5px 10px;
+}
+
+.plant-txt {
+	width: 180px;
+	height: 25px;
+	line-height: 20px;
+	float: left;
+	padding-left: 8px;
+	outline: none;
+	border-radius: 6px;
+	box-shadow: 1px 1px 1px #ccc inset, 1px 1px 1px #ccc;
+}
+
+/* main-left end */
+
+/* main-mid start */
+.main-mid {
+	width: 55%;
+}
+
+.plant-box {
+	position: relative;
+	padding-top: 48px;
+	font-size: 16px;
+	font-weight: bold;
+	color: rgb(255, 0, 0);
+	line-height: 20px;
+	font-family: "Microsoft Yahei";
+}
+
+.plant-box::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.plant-box p {
+	position: absolute;
+	float: left;
+}
+
+.plant-box p:nth-of-type(1) {
+	left: 0;
+	bottom: 0;
+}
+
+.plant-box p:nth-of-type(2) {
+	left: 340px;
+	bottom: 0;
+}
+.plant-box p{
+	top:48px;
+}
+.plant-box input {
+	padding: 0 0 0 47px!important;
+	text-align: left;
+	float: left;
+	width: 90px;
+	margin-left: 130px;
+	margin-right: 75px;
+	box-sizing: content-box;
+	outline: none;
+	border: none;
+	border-radius: 3px;
+	background-color: rgba(233, 233, 233, .7);
+}
+
+.plant-box a {
+	width: 50px;
+	height: 25px;
+	line-height: 25px;
+	float: left;
+	text-align: center;
+	border-radius: 50%;
+	color: rgb(255, 0, 0);
+	background-color: rgb(207, 204, 204);
+}
+
+/* main-mid end */
+
+/* main-right start */
+.main-right {
+	position: relative;
+	width: 20%;
+}
+
+.control-btn {
+	position: absolute;
+	top: 500px;
+	left: 10px;
+	width: 100px;
+	height: 50px;
+	font-weight: bold;
+	font-size: 20px;
+	border: none;
+	border-radius: 6px;
+}
+.rizhao1{
+	position: absolute;
+	top: 115px;
+	left: -35px;
+}
+.rizhao2{
+	position: absolute;
+	top: 115px;
+	left: 70px;
+}
+
+/* main-right end */
+
+/* main end */

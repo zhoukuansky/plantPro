@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>欢迎您的注册</title>
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/control_management.css" />
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="icon" href="./favicon-20180810063549808.ico" />
+    <link rel="icon" href="../favicon.ico" />
+    <style>
+    </style>
+</head>
+
+<body>
+    <!-- 头部导航 start -->
+    <div id="header">
+        <div class="w nav-list">
+            <ul class="head-left-nav" id="nav">
+                <li>
+                    <p>CDSJSD</p>
+                </li>
+                <li><a href="../index.html">首页</a>
+                    <!--转主页-->
+                </li>
+                <li><a href="./device_management.html">管理设备</a>
+                    <!--转登录-->
+                </li>
+                <li><a href="javascript:void(0);" onclick="toBianji()">编辑种植模式</a>
+                    <!--转了解-->
+                </li>
+                <li><a href="./pattern_add.html">添加种植模式</a>
+                    <!--转了解-->
+                </li>
+                <li>
+                    <a href="javascript:void(0);" onclick="toVideo()">视频监控</a>
+                </li>
+                <li>
+                    <a href="../showPhoto.jsp">长势记录</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    <!-- 头部导航 end -->
+
+    <!-- main start -->
+    <div id="main">
+        <div class="content-box">
+            <div class="main-left fl">
+                <div class="device-ID" id="divice">
+                    <select class="select-txt" type="text" @change="diviceChange()" placeholder="设备ID" v-model="nowDivice" />
+                    <option v-for="item in items" :value="item.divice">{{item.divice}}</option>
+                    <!-- 设备ID的选项 -->
+                    </select>
+                    <span class="login-btn" v-if="mark==1"></span>
+                    <span class="login-btn" v-if="mark==0" style="background: red;"></span>
+                    <div  v-if="mark==1">设备在线</div>
+                    <div  v-if="mark==0">设备不在线</div>
+                </div>
+                <div class="caipin" id="model">
+                    <select class="select-txt" @change="modelChange()" type="text" placeholder="种植模式" v-model="nowModel"
+                        list="planting-pattern" />
+                    <option v-for="item in items" :value="item.model">{{item.model}}</option>
+                    <!-- 种植模式的选项 -->
+                    </select>
+                </div>
+            </div>
+            <!-- 控制部分 statr -->
+            <div class="main-mid fl" id="controll">
+                <div class="plant-box">
+                    <p>CO2:</p>
+                    <input type="text" v-model="RT0" readonly placeholder="0" />
+                    <p>恒定CO2值:</p>
+                    <input type="text" readonly v-model="Sta0" placeholder="0" /> <a :href="'../chart.jsp?num=0&divice='+divice">图表</a>
+                </div>
+                <div class="plant-box">
+                    <p>光照强度:</p>
+                    <input type="text" v-model="RT1" readonly placeholder="0" />
+                    <p>恒定光照强度:</p>
+                    <input type="text" v-model="Sta1" readonly placeholder="0" /> <a :href="'../chart.jsp?num=1&divice='+divice">图表</a>
+                </div>
+                <div class="plant-box">
+                    <p>液位:</p>
+                    <input type="text" v-model="RT2" readonly placeholder="0" />
+                    <p>恒定液位:</p>
+                    <input type="text" v-model="Sta2" readonly placeholder="0" /> <a :href="'../chart.jsp?num=2&divice='+divice">图表</a>
+                </div>
+                <div class="plant-box">
+                    <p>温度:</p>
+                    <input type="text" v-model="RT3" readonly placeholder="0" />
+                    <p>恒定温度:</p>
+                    <input type="text" readonly v-model="Sta3" placeholder="0" /> <a :href="'../chart.jsp?num=3&divice='+divice">图表</a>
+                </div>
+                <div class="plant-box">
+                    <p>湿度:</p>
+                    <input type="text" readonly v-model="RT4" placeholder="0" />
+                    <p>恒定湿度:</p>
+                    <input type="text" readonly v-model="Sta4" placeholder="0" /> <a :href="'../chart.jsp?num=4&divice='+divice">图表</a>
+                </div>
+                <div class="plant-box">
+                    <p>TDS:</p>
+                    <input type="text" readonly v-model="RT5" placeholder="0" />
+                    <p>恒定TDS:</p>
+                    <input type="text" readonly v-model="Sta5" placeholder="0" /> <a :href="'../chart.jsp?num=5&divice='+divice">图表</a>
+                </div>
+                <div class="plant-box">
+                    <p>PH度:</p>
+                    <input type="text" readonly v-model="RT6" placeholder="0" />
+                    <p>恒定PH度:</p>
+                    <input type="text" readonly v-model="Sta6" placeholder="0" /> <a :href="'../chart.jsp?num=6&divice='+divice">图表</a>
+                </div>
+                <div class="plant-box">
+                    <p>水温:</p>
+                    <input type="text" readonly v-model="RT7" placeholder="0" />
+                    <p>恒定水温:</p>
+                    <input type="text" readonly v-model="Sta7" placeholder="0" /> <a :href="'../chart.jsp?num=7&divice='+divice">图表</a>
+                </div>
+                <div class="plant-box">
+                    <p>水循环:</p>
+                    <input type="text" v-model="RT8"  readonly placeholder="0" />
+                    <p>恒定水循环:</p>
+                    <input type="text" readonly v-model="Sta8" placeholder="0" />
+                </div>
+                <div class="plant-box">
+                    <p>恒定日照时间:</p>
+                    <input type="text" v-model="Sta9" readonly placeholder="0" />
+                    <p>恒定杀菌时间:</p>
+                    <input type="text" v-model="Sta10" readonly placeholder="0" />
+                </div>
+                <div class="plant-box">
+                    
+                </div>
+            </div>
+            <!--控制部分 end-->
+            <div class="main-right fl" id="btn">
+                <div v-if="sun==0">
+                    <button class="btn btn-default rizhao1" onclick="changeSunModel()">模拟日照</button>
+                    <button class="btn btn-success rizhao2">恒定日照</button>
+                </div>
+                <div v-if="sun==1">
+                        <button class="btn btn-success rizhao1">模拟日照</button>
+                        <button class="btn btn-default rizhao2" onclick="changeSunModel()">恒定日照</button>
+                    </div>
+                <!-- <input class="control-btn" v-if="!open" type="button" value="打开设备" onclick="changeShebei()" /> <input
+                    class="control-btn" v-if="open" type="button" value="关闭设备" onclick="changeShebei()" /> -->
+            </div>
+        </div>
+    </div>
+    <!-- main start -->
+
+</body>
+<script src="../assets/jquery/jquery-3.3.1.min.js"></script>
+<script src="../assets/vue/vue.min.js"></script>
+<script src="../js/control_management.js"></script>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>种植模式管理</title>
+	<link rel="stylesheet" href="../css/base.css" />
+	<link rel="stylesheet" href="../css/planting_pattern.css" />
+	<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="icon" href="../favicon.ico" />
+
+</head>
+
+<body>
+	<!-- 头部导航 start -->
+	<div id="header">
+		<div class="w nav-list">
+			<ul class="head-left-nav">
+				<li>
+					<p>CDSJSD</p>
+				</li>
+
+				<li><a href="./control_management.html">控制管理</a>
+					<!--转操作-->
+				</li>
+				<li><a href="./login.html">退出登录</a>
+					<!--转了解-->
+				</li>
+				<li><a href="./Platform_document.html">更多</a>
+					<!--转了解-->
+				</li>
+			</ul>
+
+		</div>
+	</div>
+	<!-- 头部导航 end -->
+
+	<!-- 中部标题部分 start -->
+	<div id="middle-title">
+		<div class="middle-content" id="content">
+			<div class="middle-head">
+				<a href="../html/login.html">登录</a> >种植模式列表>当前使用模式：<a :value="nowModel" href="javascript:void(0);" onclick="bianji(this)">{{nowModel}}</a>&nbsp;&nbsp;&nbsp;(注意当前模式不可删除！)
+				<button class="btn btn-success btn-add">
+					<a href="pattern_add.html">添加模式</a>
+				</button>
+			</div>
+
+			<div class="content" v-for="(item,index) in items">
+				<div>
+					<div>
+						<span>模式编号</span> <span>{{index+1}}</span>
+						<!--设备ID放这-->
+					</div>
+					<div v-if="nowModel==item.name">
+						<span>种植模式</span> <a href="#">{{item.name}}（当前模式）</a>
+					</div>
+					<div v-if="nowModel!=item.name">
+						<span>种植模式</span> <a href="#">{{item.name}}</a>
+					</div>
+				</div>
+				<div id="caozuo">
+					<button :value="item.name" onclick="bianji(this)" class="btn  btn-warning btn1">编辑</button>
+					<button v-if="nowModel==item.name" disabled class="btn btn-danger btn1">删除</button>
+					<button :value="item.name" onclick="deleteModel(this)" v-if="nowModel!=item.name" class="btn btn-danger btn1">删除</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- 中部标题部分 end -->
+
+
+</body>
+<script src="../assets/jquery/jquery-3.3.1.min.js"></script>
+<script src="../assets/vue/vue.min.js"></script>
+<script src="../js/planting_pattern.js"></script>
+
+</html>

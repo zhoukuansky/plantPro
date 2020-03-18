@@ -1,0 +1,55 @@
+@charset "UTF-8";
+.btnList{
+    text-align: center;
+    padding: 10px;
+}
+.btnBtn{
+    width: 200px;
+    margin: 0 auto;
+    height: 200px;
+    position: relative;
+    background: rgb(172, 189, 196);
+    border-radius: 180px;
+}
+.btn{
+    display: block;
+    border-radius: 180px;
+    border: 0;
+    height: 50px;
+    width: 50px;
+}
+.btn1{
+    position: absolute;
+    top: 20px;
+    left: 77px;
+}
+.btn2{
+    position: absolute;
+    top: 125px;
+    left: 77px;
+}
+.btn3{
+    position: absolute;
+    top: 75px;
+    left: 25px;
+}
+.btn4{
+    position: absolute;
+    top: 75px;
+    left: 130px;
+}
+.btn5{
+	position:absolute;
+	top:75px;
+	left:-100px;
+}
+.btn6{
+    position: absolute;
+    top: 75px;
+    left: 250px;
+}
+
+.btn:hover{
+    border: 0;
+    background: rgb(10, 52, 118);
+}

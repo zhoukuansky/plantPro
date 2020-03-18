@@ -1,0 +1,139 @@
+body {
+    /* background: rgb(204, 158, 29); */
+    background: rgba(223, 188, 92, 0.735);
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    background: rgb(0,0,0);
+    height: 60px;
+    color: ghostwhite;
+    text-align: center;
+    font-size: 35px;
+    box-shadow:0 0 0 0 !important;
+  /* padding-top: 10px; */
+}
+
+#img_shangjian1 {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -moz-transform: rotate(180deg); /* Firefox */
+    -webkit-transform: rotate(180deg); /* Safari 和 Chrome */
+    -o-transform: rotate(180deg); /* Opera */
+}
+
+#content_to_lookNow {
+    position: absolute;
+    top: 400px;
+    left: 20px;
+}
+
+#look——now {
+    text-decoration: none;
+    display: block;
+    color: rgb(255, 255, 255);
+    margin-left: 12px;
+}
+
+#look_text {
+    font-size: 19px;
+    writing-mode: tb-rl
+}
+
+#toIndex {
+    position: relative;
+}
+
+#content_to_index {
+    position: absolute;
+    left: 1300px;
+    top: 100px;
+}
+
+#index {
+    position: absolute;
+    top: 7px;
+    text-decoration: none;
+}
+
+#img_youjian2 {
+    margin-left: 101px;
+}
+
+#text_index {
+    font-size: 25px;
+    position: relative;
+    color: rgb(250, 253, 241);
+}
+
+#img_list {
+    margin:2px auto;
+    height: 637px;
+    width: 1250px;
+}
+
+.left{
+    width: 850px;
+    float: left;
+    height: 637px;
+}
+
+.right{ 
+    background: url(../images/timeBack.png) no-repeat;
+    background-size:300px;
+    background-position:20% 80%;
+    width: 400px;
+    height: 500px;
+    float: right;
+    position: relative;
+}
+.right .span1{
+    position: absolute;
+    top:280px;
+    left: 80px;
+}
+.right .span2{
+    position: absolute;
+    top:320px;
+    left:110px;
+    font-size: 17px;
+    font-weight: bold;
+    color: royalblue;
+}
+.right .span3{
+    position: absolute;
+    top:350px;
+    left: 110px;
+    font-size: 17px;
+    font-weight: bold;
+    color: royalblue;
+}
+
+.img {
+    cursor: zoom-in;
+    margin: auto;
+    box-shadow: 0 0 6px rgb(172, 218, 34);
+    border: solid 1px bisque;
+    margin: 10px 0px 10px 25px;
+}
+
+#hidebg {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: #000;
+    width: 100%; /*宽度设置为100%，这样才能使隐藏背景层覆盖原页面*/
+    filter: alpha(opacity=80); /*设置透明度为60%*/
+    opacity: 0.8; /*非IE浏览器下设置透明度为60%*/
+    display: none; /* http://www.jb51.net */
+    z-Index: 2;
+}
+
+#hidebox {
+    display: none;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    z-Index: 3;
+}

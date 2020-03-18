@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>编辑种植模式</title>
+	<link rel="stylesheet" href="../css/base.css" />
+	<link rel="stylesheet" href="../css/pattern_add.css" />
+	<link rel="stylesheet" href="../assets/bootstrap/css/">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="icon" href="./favicon-20180810063549808.ico" />
+	<link rel="icon" href="../favicon.ico" />
+
+</head>
+
+<body>
+	<!-- 头部导航 start -->
+	<div id="header">
+		<div class="w nav-list">
+			<ul class="head-left-nav">
+				<li>
+					<p>CDSJSD</p>
+				</li>
+				<li><a href="../index.html">首页</a>
+					<!--转主页-->
+				</li>
+				<li><a href="./control_management.html">控制管理</a>
+					<!--转登录-->
+				</li>
+				<li><a href="../html/login.html">退出登录</a>
+					<!--转了解-->
+				</li>
+			</ul>
+
+		</div>
+	</div>
+	<!-- 头部导航 end -->
+
+	<!-- main start -->
+	<div id="main">
+		<div class="content-box" id="content">
+			<div class="main-left fl">
+
+				<div class="caipin">
+					<input v-model="name" class="select-txt" type="text" placeholder="种植模式" list="planting-pattern" />
+					<datalist id="planting-pattern">
+						<!-- 种植模式的选项 -->
+						<option></option>
+					</datalist>
+				</div>
+			</div>
+			<!-- 控制部分 statr -->
+			<div class="main-mid fl">
+				<div class="plant-box">
+
+					<p>恒定CO2值:</p>
+					<input v-model="co2" type="text" placeholder="0" />
+				</div>
+				<div class="plant-box">
+
+					<p>恒定PH度:</p>
+					<input v-model="PH" type="text" placeholder="0" />
+				</div>
+				<div class="plant-box">
+
+					<p>恒定TDS值:</p>
+					<input v-model="TDS" type="text" placeholder="0" />
+				</div>
+				<div class="plant-box">
+
+					<p>恒定光照强度:</p>
+					<input v-model="sun" type="text" placeholder="0" />
+				</div>
+				<div class="plant-box">
+
+					<p>恒定水温:</p>
+					<input v-model="water" type="text" placeholder="0" />
+				</div>
+				<div class="plant-box">
+
+					<p>恒定液位:</p>
+					<input v-model="waterHeight" type="text" placeholder="0" />
+				</div>
+				<div class="plant-box">
+
+					<p>恒定温度:</p>
+					<input v-model="temperature" type="text" placeholder="0" />
+				</div>
+				<div class="plant-box">
+
+					<p>恒定湿度:</p>
+					<input v-model="humidity" type="text" placeholder="0" />
+				</div>
+				<div class="plant-box">
+
+					<p>恒定水循环:</p>
+					<input v-model="cycle" type="text" placeholder="0" />
+				</div>
+				<div class="plant-box">
+
+					<p>恒定日照时间:</p>
+					<input v-model="sunTime" type="text" placeholder="0" />
+				</div>
+				<div class="plant-box">
+
+					<p>恒定杀菌时间:</p>
+					<input v-model="sterilize" type="text" placeholder="0" />
+				</div>
+			</div>
+			<!--控制部分 end-->
+			<div class="main-right fl">
+				<input class="control-btn btn-info" onclick="update()" type="button" value="确认修改" />
+			</div>
+		</div>
+	</div>
+	<!-- main start -->
+
+</body>
+<script src="../assets/jquery/jquery-3.3.1.min.js"></script>
+<script src="../assets/vue/vue.min.js"></script>
+<script src="../js/pattern_edit.js"></script>
+
+</html>

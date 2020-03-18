@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>设备ID管理</title>
+	<link rel="stylesheet" href="../css/base.css" />
+	<link rel="stylesheet" href="../css/device_management.css" />
+	<link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="icon" href="../favicon.ico" />
+
+</head>
+
+<body>
+	<!-- 头部导航 start -->
+	<div id="header">
+		<div class="w nav-list">
+			<ul class="head-left-nav">
+				<li>
+					<p>CDSJSD</p>
+				</li>
+
+				<li><a href="./control_management.html">控制管理</a>
+					<!--转操作-->
+				</li>
+
+				<li><a href="./login.html">退出登录</a>
+					<!--转了解-->
+				</li>
+				<li><a href="./Platform_document.html">更多</a>
+					<!--转了解-->
+				</li>
+			</ul>
+
+		</div>
+	</div>
+	<!-- 头部导航 end -->
+
+	<!-- 中部标题部分 start -->
+	<div id="middle-title">
+		<div class="w middle-content" id="contents">
+			<div class="middle-head">
+				<a class="fl" href="../html/login.html">登录</a> <span class="fl">>ID列表</span>
+			</div>
+
+			<div class="content" v-for="(item,index) in items">
+				<div>
+					<span>ID编号</span> <span>{{index+1}}</span>
+					<!--设备ID放这-->
+				</div>
+				<div>
+					<span>设备ID</span> <a href="#">{{item.name}}</a>
+					<button class="btn btn-danger" :value="item.name" onclick="deleteDivice(this)">删除</button>
+				</div>
+			</div>
+
+			<div class="add">
+				<div id="add">
+					<input type="text" v-model="input" class="form-control" placeholder="请输入新设备id" />
+					<button class="btn btn-success" onclick="add()">添加设备</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- 中部标题部分 end -->
+</body>
+<script src="../assets/jquery/jquery-3.3.1.min.js"></script>
+<script src="../assets/vue/vue.min.js"></script>
+<script src="../js/device_management.js"></script>
+
+</html>
