@@ -1,4 +1,4 @@
-$.getUrlParam = function (name) {
+$.getUrlParam = function (name) {//获取跳转页面时，url中携带的参数函数，主要是通过js跳转页面
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
     var r = window.location.search.substr(1).match(reg);
     if (r != null) return unescape(r[2]); return null;
@@ -10,13 +10,13 @@ var divice = $.getUrlParam("divice");
 var dateTime = [];
 var vale = [];
 window.onload = function () {
-    getData();
-    showChart();
+    getData();//先获得数据
+    showChart();//然后利用插件框架echarts进行渲染
 
     var li = [];
     li = document.getElementsByTagName("li");
     for (let i = 0; i < li.length; i++) {
-        li[i].onclick = function () {
+        li[i].onclick = function () {//点击事件，进行相应操作
             flag = i;
             change();
             getData();
@@ -25,6 +25,7 @@ window.onload = function () {
     }
 }
 
+//这个change函数是在点击事件之后，移除html的元素class属性 通过预选设置的class属性  实现样式的改变
 function change() {
     if (flag == 0) {
         $("#1").removeClass("unchoice").addClass('choice');
@@ -41,6 +42,7 @@ function change() {
     }
 }
 
+//获取图图表的数据
 function getData() {
     var xhr;
     if (window.XMLHttpRequest) {
@@ -65,6 +67,7 @@ function getData() {
     xhr.send();
 }
 
+//这里是图标用的是框架插件，是assets目录下的echarts，可以查询echarts的相关接口进行查询
 function showChart() {
     var myChart = echarts.init(document.getElementById('main'));
     var text;

@@ -1,17 +1,16 @@
-$.getUrlParam = function (name) {
+$.getUrlParam = function (name) {//获取跳转页面时，url中携带的参数函数，主要是通过js跳转页面
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
     var r = window.location.search.substr(1).match(reg);
     if (r != null) return unescape(r[2]); return null;
 }
 
 //得到user参数
-var diviceID = $.getUrlParam("diviceID");
-var word = $.getUrlParam("word");
+var diviceID = $.getUrlParam("diviceID");//获取url中的diviceID
+var word = $.getUrlParam("word");//获取url中的word
 word = unescape(word);
+var user = document.cookie.split(";")[0].split("=")[1];//获取网站cookie
 
-var user = document.cookie.split(";")[0].split("=")[1];
-
-var contentVue = new Vue({
+var contentVue = new Vue({//这里的Vue有点绑定了html页面中id为“content”的元素。需要联系html进行解释。下面data中的数据在html中都能找到相应绑定
     el: "#content",
     data: {
         name: word,
@@ -29,7 +28,7 @@ var contentVue = new Vue({
     }
 })
 
-$(function () {
+$(function () {//页面加载之后马上执行函数
     queryModelInfo();
 })
 
@@ -45,6 +44,7 @@ function queryModelInfo() {
             //console.log(res);
             var data = res.split("*")[1].split("~");
             console.log(data);
+            //这里进行数据的填充，将数据填入相应绑定 然后反应到页面上 可以将之反应到页面上
             contentVue.co2 = data[0];
             contentVue.sun = data[1];
             contentVue.waterHeight = data[2];
@@ -64,7 +64,7 @@ function update() {
     $.ajax({
         url: "../updateModel.jsp",
         type: "GET",
-        data: {
+        data: {//将数据上传，通过contentVue的数据绑定获取页面数据
             word: word,
             userID: user,
             name:contentVue.name,

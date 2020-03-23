@@ -8,19 +8,19 @@
 // var user = $.getUrlParam("user");
 var user = document.cookie.split(";")[0].split("=")[1];
 
-var contentVue = new Vue({
+var contentVue = new Vue({//这里的Vue有点绑定了html页面中id为“contents”的元素
     el: "#contents",
     data: {
-        items: [{ name: "加载失败" }],
+        items: [{ name: "加载失败" }],//数组绑定
         input: "",
     }
 })
 
 $(function () {
-    queryDiviceNum();
+    queryDiviceNum();//页面加载之后马上执行函数
 })
 
-//查询渲染数据
+//查询设备并渲染数据
 function queryDiviceNum() {
     contentVue.items = [];
     $.ajax({
@@ -41,7 +41,7 @@ function queryDiviceNum() {
 
 //新增设备id
 function add() {
-    var reg = /^[\w\u4e00-\u9fa5]{8}$/;
+    var reg = /^[\w\u4e00-\u9fa5]{8}$/;//匹配一个 数字，字母，下划线，-，.，中文组成的一个字串
     if(reg.test(contentVue.input)){
       $.ajax({
         url: "../addDivice.jsp",
@@ -67,6 +67,7 @@ function add() {
     
 }
 
+//根据id删除设备
 function deleteDivice(e){
     var deleteId = $(e).attr("value");
     $.ajax({

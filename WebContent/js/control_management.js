@@ -8,6 +8,7 @@
 // var user = $.getUrlParam("user");
 var user = document.cookie.split(";")[0].split("=")[1];
 console.log(user)
+
 var diviceVue = new Vue({
     el: "#divice",
     data: {

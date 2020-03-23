@@ -1,3 +1,5 @@
+//加载图片js
+
 var user = document.cookie.split(";")[0].split("=")[1];
 var divice = document.cookie.split(";")[1].split("=")[1];
 
@@ -113,6 +115,7 @@ function btnClose() {
     flag=true;
 }
 
+//加载图片
 function loadingPIC(){
     $.ajax({
         url:"../loadingPIC.jsp",
@@ -134,6 +137,7 @@ function loadingPIC(){
     })
 }
 
+//查看图片
 function seePic(){
     $.ajax({
         url:"../seePic.jsp",
@@ -162,6 +166,7 @@ function seePic(){
     })
 }
 
+//查看下一张图片
 function seeAdd(){
     document.getElementById("one_modal").style.display = "none";
     picVue.src="../images/pic.gif";
